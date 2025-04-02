@@ -1,0 +1,51 @@
+.mainWrapper {
+  background-image: url("/bg-image.jpg");
+  height: 700px;
+  position: relative;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 120%;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.button {
+  border-radius: 12px;
+  border: none;
+
+  padding: 12px 88px;
+  width: 276px;
+  height: 44px;
+
+  background-color: var(--color-button);
+  color: inherit;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+
+  position: absolute;
+  top: 436px;
+  left: 328px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
