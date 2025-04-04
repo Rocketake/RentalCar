@@ -1,19 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CatalogForm from "../Form/CatalogForm.jsx";
+import CardList from "../CardList/CardList.jsx";
 
 const Catalog = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const arrData = await axios.get(
+      const response = await axios.get(
         "https://car-rental-api.goit.global/cars"
       );
-      setData(arrData);
+      setData(response.data.cars);
     }
     fetchData();
   }, []);
-  const [filteredData, setFilteredData] = useState([]);
 
   const handleFetch = async ({
     brand,
@@ -24,13 +24,12 @@ const Catalog = () => {
     const response = await axios.get(
       `https://car-rental-api.goit.global/cars?brand=${brand}&rentalPrice=${rentalPrice}&minMileage=${minMileage}&maxMileage=${maxMileage}`
     );
-    setFilteredData(response.data);
+    setData(response.data.cars);
   };
-  console.log(filteredData);
-
   return (
     <div>
       <CatalogForm onSubmit={handleFetch} />
+      {data.length > 0 && <CardList carList={data} />}
     </div>
   );
 };
