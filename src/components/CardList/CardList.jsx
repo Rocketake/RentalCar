@@ -1,13 +1,16 @@
 import React from "react";
 import CardItem from "../CardItem/CardItem.jsx";
+import s from "./CardList.module.css";
 
 const CardList = ({ carList }) => {
   return (
-    <div>
+    <ul className={s.listWrapper}>
       {carList.map((car) => (
-        <CardItem carInfo={car} />
+        <li>
+          <CardItem carInfo={car} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
