@@ -96,19 +96,3 @@
   color: var(--color-gray);
   line-height: 1.5;
 }
-
-.readMoreButton {
-  padding: 12px 97px;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: var(--color-button);
-  color: var(--color-white);
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.readMoreButton:hover {
-  background-color: var(--color-button-hover);
-}

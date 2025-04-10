@@ -1,6 +1,9 @@
 import axios from "axios";
 import { Field, Formik, Form } from "formik";
 import React, { useEffect, useId, useState } from "react";
+import s from "./CatalogForm.module.css";
+import clsx from "clsx";
+import Button from "../Button/Button.jsx";
 
 const CatalogForm = ({ onSubmit }) => {
   const [brands, setBrands] = useState([]);
@@ -35,53 +38,80 @@ const CatalogForm = ({ onSubmit }) => {
       }}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <label htmlFor={brandFieldId}>Car brand</label>
-        <Field as="select" name="brand" id={brandFieldId}>
-          <option value="" hidden>
-            Choose a brand
-          </option>
-          {brands.map((brand) => {
-            return (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            );
-          })}
-        </Field>
+      <Form className={s.formWrapper}>
+        <div className={s.fieldWrapper}>
+          <label className={s.label} htmlFor={brandFieldId}>
+            Car brand
+          </label>
+          <Field
+            className={clsx(s.brandSelect, s.field)}
+            as="select"
+            name="brand"
+            id={brandFieldId}
+          >
+            <option value="" hidden>
+              Choose a brand
+            </option>
+            {brands.map((brand) => {
+              return (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              );
+            })}
+          </Field>
+        </div>
 
-        <label htmlFor={priceFieldId}>Price/ 1 hour</label>
-        <Field as="select" name="rentalPrice" id={priceFieldId}>
-          <option value="" hidden>
-            Choose a price
-          </option>
-          <option value="30">30</option>
-          <option value="40">40</option>
-          <option value="50">50</option>
-          <option value="60">60</option>
-          <option value="70">70</option>
-          <option value="80">80</option>
-          <option value="90">90</option>
-          <option value="100">100</option>
-        </Field>
+        <div className={s.fieldWrapper}>
+          <label className={s.label} htmlFor={priceFieldId}>
+            Price/ 1 hour
+          </label>
+          <Field
+            className={clsx(s.priceSelect, s.field)}
+            as="select"
+            name="rentalPrice"
+            id={priceFieldId}
+          >
+            <option value="" hidden>
+              Choose a price
+            </option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
+          </Field>
+        </div>
 
-        <label htmlFor={fromMileageFieldId}>Car mileage / km</label>
-        <Field
-          type="number"
-          name="minMileage"
-          placeholder="From"
-          id={fromMileageFieldId}
-        ></Field>
+        <div className={s.fieldWrapper}>
+          <label className={s.label} htmlFor={fromMileageFieldId}>
+            Car mileage / km
+          </label>
 
-        <label htmlFor={toMileageFieldId}></label>
-        <Field
-          type="number"
-          name="maxMileage"
-          placeholder="To"
-          id={toMileageFieldId}
-        ></Field>
+          <div className={s.mileageWrapper}>
+            <Field
+              className={s.mileageInput}
+              type="number"
+              name="minMileage"
+              placeholder="From"
+              id={fromMileageFieldId}
+            />
+            <Field
+              className={s.mileageInput}
+              type="number"
+              name="maxMileage"
+              placeholder="To"
+              id={toMileageFieldId}
+            />
+          </div>
+        </div>
 
-        <button type="submit">Search</button>
+        <Button variant="search" type="submit">
+          Search
+        </Button>
       </Form>
     </Formik>
   );

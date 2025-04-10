@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./CardItem.module.css";
+import Button from "../Button/Button.jsx";
 
 const CardItem = ({
   carInfo: {
@@ -59,7 +60,9 @@ const CardItem = ({
           </div>
         </div>
       </div>
-      <button className={s.readMoreButton}>Read more</button>
+      <Button variant="readMore" type="submit">
+        Read more
+      </Button>
     </div>
   );
 };
