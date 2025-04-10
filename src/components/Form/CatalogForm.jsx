@@ -92,20 +92,33 @@ const CatalogForm = ({ onSubmit }) => {
           </label>
 
           <div className={s.mileageWrapper}>
-            <Field
-              className={s.mileageInput}
-              type="number"
-              name="minMileage"
-              placeholder="From"
-              id={fromMileageFieldId}
-            />
-            <Field
-              className={s.mileageInput}
-              type="number"
-              name="maxMileage"
-              placeholder="To"
-              id={toMileageFieldId}
-            />
+            <Field name="minMileage">
+              {({ field }) => (
+                <div className={s.inputWithPrefix}>
+                  <span className={s.prefix}>From</span>
+                  <input
+                    {...field}
+                    type="text"
+                    className={s.mileageInput}
+                    id={fromMileageFieldId}
+                  />
+                </div>
+              )}
+            </Field>
+
+            <Field name="maxMileage">
+              {({ field }) => (
+                <div className={s.inputWithPrefix}>
+                  <span className={s.prefix}>To</span>
+                  <input
+                    {...field}
+                    type="text"
+                    className={s.mileageInput}
+                    id={toMileageFieldId}
+                  />
+                </div>
+              )}
+            </Field>
           </div>
         </div>
 
