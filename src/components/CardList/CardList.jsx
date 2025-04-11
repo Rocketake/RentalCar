@@ -6,7 +6,7 @@ const CardList = ({ carList }) => {
   return (
     <ul className={s.listWrapper}>
       {carList.map((car) => (
-        <li>
+        <li key={car.id}>
           <CardItem carInfo={car} />
         </li>
       ))}

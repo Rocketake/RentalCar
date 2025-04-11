@@ -4,6 +4,7 @@ import Button from "../Button/Button.jsx";
 
 const CardItem = ({
   carInfo: {
+    id,
     img,
     brand,
     model,
@@ -60,7 +61,7 @@ const CardItem = ({
           </div>
         </div>
       </div>
-      <Button variant="readMore" type="submit">
+      <Button path={id} variant="readMore" type="submit">
         Read more
       </Button>
     </div>

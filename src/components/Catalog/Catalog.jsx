@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import CatalogForm from "../Form/CatalogForm.jsx";
+import CatalogForm from "../CatalogForm/CatalogForm.jsx";
 import CardList from "../CardList/CardList.jsx";
 
 const Catalog = () => {
