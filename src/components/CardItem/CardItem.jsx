@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import s from "./CardItem.module.css";
 import Button from "../Button/Button.jsx";
+import { useNavigate } from "react-router-dom";
 
 const CardItem = ({
   carInfo: {
@@ -16,6 +17,8 @@ const CardItem = ({
     mileage,
   },
 }) => {
+  const navigate = useNavigate();
+
   const addressArray = address.split(",");
   const mileageWithSpace = mileage.toLocaleString("uk");
 
@@ -61,7 +64,13 @@ const CardItem = ({
           </div>
         </div>
       </div>
-      <Button path={id} variant="readMore" type="submit">
+      <Button
+        onClick={() => {
+          navigate(`/catalog/${id}`);
+        }}
+        variant="readMore"
+        type="submit"
+      >
         Read more
       </Button>
     </div>

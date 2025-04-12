@@ -2,6 +2,7 @@
   background-image: url("/bg-image.jpg");
   height: 700px;
   position: relative;
+  color: var(--color-white);
 }
 
 .title {
