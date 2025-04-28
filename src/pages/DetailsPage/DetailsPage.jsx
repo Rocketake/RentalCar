@@ -8,8 +8,11 @@ const DetailsPage = () => {
   return (
     <div className={s.container}>
       <Header />
-      <CarDetails />
-      <BookForm />
+      <div className={s.detailsPageWrapper}>
+        <img src="../../../public/bg-image.jpg" alt="" width="640px" />
+        <CarDetails />
+        <BookForm />
+      </div>
     </div>
   );
 };

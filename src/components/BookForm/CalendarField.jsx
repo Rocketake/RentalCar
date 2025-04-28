@@ -8,7 +8,6 @@ const CalendarField = ({ field, form }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
-  // Закриття по кліку поза елементом
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {

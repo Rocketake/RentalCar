@@ -30,8 +30,15 @@
   width: 204px;
 }
 
+.brandSelect:focus-visible {
+  outline: none;
+}
+
 .priceSelect {
   width: 196px;
+}
+.priceSelect:focus-visible {
+  outline: none;
 }
 
 .mileageWrapper {

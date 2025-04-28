@@ -26,6 +26,7 @@ const BookForm = () => {
         <Field name="email" type="text" placeholder="email"></Field>
         <Field name="bookingDate" component={CalendarField} />
         <Field name="comment" type="text" placeholder="comment"></Field>
+        <button type="submit">send</button>
       </Form>
     </Formik>
   );
